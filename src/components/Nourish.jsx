@@ -31,11 +31,11 @@ export default function Nourish() {
   )
 
   return (
-    <section ref={root} className="bg-paper px-5 py-24 md:px-8 md:py-32">
+    <section ref={root} className="bg-paper px-5 py-16 sm:py-24 md:px-8 md:py-32">
       <div className="mx-auto grid max-w-6xl items-center gap-16 lg:grid-cols-2">
         <div className="nourish-copy">
           <p className="text-[11px] tracking-[0.34em] text-leaf uppercase">Share food</p>
-          <h2 className="font-display mt-4 text-4xl leading-tight md:text-6xl">
+          <h2 className="font-display mt-4 text-[2.15rem] leading-tight md:text-6xl">
             A bowl, a plant,
             <span className="block italic">a future.</span>
           </h2>
@@ -60,7 +60,7 @@ export default function Nourish() {
         </div>
 
         <div className="flex justify-center" aria-hidden="true">
-          <svg viewBox="0 0 280 320" className="w-64 md:w-80">
+          <svg viewBox="0 0 280 320" className="w-48 max-w-full sm:w-64 md:w-80">
             <ellipse className="grain" cx="140" cy="250" rx="78" ry="18" fill="#3a2415" />
             <path d="M70 236c8 34 32 50 70 50s62-16 70-50" fill="#2a1a10" />
             {[

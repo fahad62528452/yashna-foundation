@@ -36,10 +36,10 @@ export default function Manifesto() {
     'When a family needs blood at midnight, we find a donor. When a stomach is empty, we fill a plate.'
 
   return (
-    <section id="mission" ref={root} className="relative px-5 py-24 md:px-8 md:py-36">
+    <section id="mission" ref={root} className="relative overflow-x-clip px-5 py-16 sm:py-24 md:px-8 md:py-36">
       <div className="mx-auto max-w-6xl">
         <p className="text-[11px] tracking-[0.34em] text-blood uppercase">Our promise</p>
-        <h2 className="font-display mt-6 max-w-5xl text-4xl leading-[1.15] font-medium sm:text-5xl md:text-6xl lg:text-7xl">
+        <h2 className="font-display mt-6 max-w-5xl text-[1.85rem] leading-[1.2] font-medium sm:text-5xl md:text-6xl lg:text-7xl">
           {line.split(' ').map((word, i) => (
             <span key={`${word}-${i}`} className="manifesto-word mr-[0.28em] inline-block">
               {word}

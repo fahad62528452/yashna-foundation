@@ -27,9 +27,9 @@ export default function Helpline() {
   )
 
   return (
-    <section id="helpline" ref={root} className="relative overflow-hidden bg-blood-deep px-5 py-24 text-cream md:px-8 md:py-32">
+    <section id="helpline" ref={root} className="relative overflow-hidden bg-blood-deep px-5 py-16 text-cream sm:py-24 md:px-8 md:py-32">
       <div className="pointer-events-none absolute -top-24 -right-16 h-72 w-72 rounded-full bg-blood opacity-70 blur-3xl" />
-      <div className="absolute top-1/2 left-[8%] hidden -translate-y-1/2 md:block" aria-hidden="true">
+      <div className="absolute top-1/2 left-[8%] hidden -translate-y-1/2 lg:block" aria-hidden="true">
         <span className="pulse-ring absolute inset-0 rounded-full border border-cream/30" />
         <span className="pulse-ring absolute inset-0 rounded-full border border-cream/20 [animation-delay:700ms]" />
         <div className="relative grid h-28 w-28 place-items-center rounded-full bg-blood">
@@ -41,7 +41,7 @@ export default function Helpline() {
 
       <div className="relative mx-auto max-w-6xl lg:pl-44">
         <p className="help-item text-[11px] tracking-[0.34em] text-cream/70 uppercase">Telangana helpline</p>
-        <h2 className="help-item font-display mt-4 max-w-3xl text-4xl leading-[1.1] md:text-6xl">
+        <h2 className="help-item font-display mt-4 max-w-3xl text-[2.15rem] leading-[1.1] sm:text-4xl md:text-6xl">
           Need blood tonight?
           <span className="mt-2 block italic">We are already awake.</span>
         </h2>
@@ -63,7 +63,7 @@ export default function Helpline() {
           href={LINKS.whatsapp}
           target="_blank"
           rel="noreferrer"
-          className="help-item mt-10 inline-flex items-center gap-2 rounded-full bg-cream px-7 py-4 text-[13px] font-medium tracking-[0.16em] text-blood uppercase"
+          className="help-item mt-10 inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-full bg-cream px-7 py-4 text-center text-[12px] font-medium tracking-[0.14em] text-blood uppercase sm:w-auto sm:text-[13px] sm:tracking-[0.16em]"
         >
           Open WhatsApp helpline
           <ArrowUpRight size={16} />

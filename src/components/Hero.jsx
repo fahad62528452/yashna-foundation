@@ -40,6 +40,7 @@ export default function Hero({ ready }) {
   )
 
   const magnetic = (e) => {
+    if (!window.matchMedia('(pointer: fine)').matches) return
     const el = e.currentTarget
     const r = el.getBoundingClientRect()
     gsap.to(el, {
@@ -57,16 +58,16 @@ export default function Hero({ ready }) {
     <section
       id="top"
       ref={root}
-      className="relative min-h-dvh overflow-x-hidden px-5 pt-28 pb-16 md:px-8 md:pt-32 lg:pb-20"
+      className="relative min-h-dvh overflow-x-clip px-5 pt-24 pb-28 sm:pt-28 sm:pb-20 md:px-8 md:pt-32 lg:pb-20"
     >
-      <div className="mx-auto grid max-w-7xl items-center gap-10 md:grid-cols-[1.15fr_0.85fr] md:gap-8 lg:gap-12">
+      <div className="mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:gap-12">
         <div>
-          <p className="hero-kicker text-[11px] font-medium tracking-[0.38em] text-muted uppercase">
+          <p className="hero-kicker text-[10px] font-medium tracking-[0.22em] text-muted uppercase sm:text-[11px] sm:tracking-[0.38em]">
             Telangana · Community NGO
           </p>
 
-          <div className="relative mt-6">
-            <h1 className="font-display overflow-hidden text-[16vw] leading-[0.82] font-semibold tracking-tight text-blood sm:text-7xl md:text-6xl lg:text-[7.5rem] xl:text-[8.4rem]">
+          <div className="relative mt-5 sm:mt-6">
+            <h1 className="font-display overflow-hidden text-[clamp(3rem,14vw,8.4rem)] leading-[0.82] font-semibold tracking-tight text-blood">
               {'YASHNA'.split('').map((ch, i) => (
                 <span key={`${ch}-${i}`} className="hero-letter inline-block">
                   {ch}
@@ -75,16 +76,18 @@ export default function Hero({ ready }) {
             </h1>
             <h1
               aria-hidden="true"
-              className="hero-fill font-display pointer-events-none absolute inset-0 overflow-hidden text-[16vw] leading-[0.82] font-semibold tracking-tight text-blood-deep sm:text-7xl md:text-6xl lg:text-[7.5rem] xl:text-[8.4rem]"
+              className="hero-fill font-display pointer-events-none absolute inset-0 overflow-hidden text-[clamp(3rem,14vw,8.4rem)] leading-[0.82] font-semibold tracking-tight text-blood-deep"
               style={{ clipPath: 'inset(100% 0 0 0)' }}
             >
               YASHNA
             </h1>
           </div>
 
-          <div className="mt-3 flex items-center gap-4">
+          <div className="mt-3 flex items-center gap-3 sm:gap-4">
             <div className="hero-line h-px flex-1 origin-left bg-ink/20" />
-            <p className="text-[11px] tracking-[0.34em] text-ink uppercase">Foundation</p>
+            <p className="text-[10px] tracking-[0.28em] text-ink uppercase sm:text-[11px] sm:tracking-[0.34em]">
+              Foundation
+            </p>
             <div className="hero-line h-px flex-1 origin-right bg-ink/20" />
           </div>
 
@@ -97,7 +100,7 @@ export default function Hero({ ready }) {
             />
           </svg>
 
-          <p className="hero-copy font-display mt-8 max-w-xl text-3xl leading-tight text-ink italic sm:text-4xl">
+          <p className="hero-copy font-display mt-8 max-w-xl text-[1.65rem] leading-tight text-ink italic sm:text-4xl">
             One drop saves a life.
             <br />
             One meal brings hope.
@@ -108,14 +111,14 @@ export default function Hero({ ready }) {
             helping neighbours — with blood, with food, with life.
           </p>
 
-          <div className="mt-8 flex flex-wrap gap-3">
+          <div className="mt-8 flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:flex-wrap">
             <a
               href={LINKS.whatsapp}
               target="_blank"
               rel="noreferrer"
               onMouseMove={magnetic}
               onMouseLeave={reset}
-              className="hero-cta inline-flex items-center gap-2 rounded-full bg-blood px-6 py-3.5 text-[13px] font-medium tracking-[0.14em] text-cream uppercase"
+              className="hero-cta inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-blood px-6 py-3.5 text-[13px] font-medium tracking-[0.14em] text-cream uppercase"
             >
               Request blood
               <ArrowDownRight size={16} />
@@ -124,14 +127,14 @@ export default function Hero({ ready }) {
               href="#join"
               onMouseMove={magnetic}
               onMouseLeave={reset}
-              className="hero-cta inline-flex items-center gap-2 rounded-full border border-ink/20 px-6 py-3.5 text-[13px] font-medium tracking-[0.14em] uppercase"
+              className="hero-cta inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-ink/20 px-6 py-3.5 text-[13px] font-medium tracking-[0.14em] uppercase"
             >
               Volunteer
             </a>
           </div>
         </div>
 
-        <div className="hero-mark relative mx-auto grid h-[min(64vw,260px)] w-[min(64vw,260px)] place-items-center md:h-[280px] md:w-[280px] lg:h-[min(92vw,420px)] lg:w-[min(92vw,420px)] lg:justify-self-end">
+        <div className="hero-mark relative mx-auto grid h-[min(68vw,240px)] w-[min(68vw,240px)] place-items-center sm:h-[280px] sm:w-[280px] lg:h-[min(40vw,420px)] lg:w-[min(40vw,420px)] lg:justify-self-end">
           <svg
             className="orbit absolute inset-0 h-full w-full"
             viewBox="0 0 200 200"

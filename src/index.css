@@ -17,11 +17,12 @@ html,
 body,
 #root {
   min-height: 100%;
+  overflow-x: clip;
+  max-width: 100%;
 }
 
 html {
   scroll-behavior: auto;
-  overflow-x: hidden;
 }
 
 body {
@@ -57,7 +58,7 @@ body.hide-cursor * {
   font-family: var(--font-display);
 }
 
-.grain {
+.grain-overlay {
   pointer-events: none;
   position: fixed;
   inset: 0;

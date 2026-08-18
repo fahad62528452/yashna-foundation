@@ -71,7 +71,7 @@ export default function Preloader({ onDone }) {
         </svg>
       </div>
 
-      <p className="loader-word font-display overflow-hidden text-5xl font-semibold tracking-[0.18em] text-blood sm:text-6xl">
+      <p className="loader-word font-display overflow-hidden px-4 text-center text-4xl font-semibold tracking-[0.12em] text-blood sm:text-6xl sm:tracking-[0.18em]">
         {'YASHNA'.split('').map((ch, i) => (
           <span key={`${ch}-${i}`} className="inline-block">
             {ch}
@@ -79,7 +79,7 @@ export default function Preloader({ onDone }) {
         ))}
       </p>
       <div className="loader-line mt-4 h-px w-40 origin-left bg-ink/30" />
-      <p className="loader-tag mt-4 text-[11px] font-medium tracking-[0.32em] text-muted uppercase">
+      <p className="loader-tag mt-4 max-w-[90%] px-4 text-center text-[10px] font-medium tracking-[0.22em] text-muted uppercase sm:text-[11px] sm:tracking-[0.32em]">
         Share blood · Share food · Share life
       </p>
     </div>

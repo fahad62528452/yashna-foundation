@@ -3,10 +3,10 @@ import { LINKS } from '../lib/constants'
 
 export default function Footer() {
   return (
-    <footer className="border-t border-ink/10 bg-ink px-5 py-16 text-cream md:px-8">
+    <footer className="border-t border-ink/10 bg-ink px-5 pt-16 pb-28 text-cream md:px-8 md:pb-16">
       <div className="mx-auto flex max-w-6xl flex-col gap-12 md:flex-row md:items-end md:justify-between">
         <div>
-          <p className="font-display text-5xl tracking-[0.08em] text-cream">YASHNA</p>
+          <p className="font-display text-4xl tracking-[0.08em] text-cream sm:text-5xl">YASHNA</p>
           <p className="mt-1 text-[11px] tracking-[0.34em] uppercase opacity-70">Foundation</p>
           <svg className="mt-4 w-48" viewBox="0 0 240 28" fill="none" aria-hidden="true">
             <path

@@ -34,7 +34,8 @@ export default function App() {
 
   useEffect(() => {
     if (!ready) return
-    if (prefersReducedMotion()) {
+    const desktopMotion = window.matchMedia('(pointer: fine) and (min-width: 1024px)').matches
+    if (prefersReducedMotion() || !desktopMotion) {
       ScrollTrigger.refresh()
       return
     }
@@ -65,7 +66,7 @@ export default function App() {
         Skip to content
       </a>
       {!ready && <Preloader onDone={handleDone} />}
-      <div className="grain" />
+      <div className="grain-overlay" />
       <Cursor />
       <Nav />
       <main>
@@ -81,7 +82,7 @@ export default function App() {
         href={LINKS.whatsapp}
         target="_blank"
         rel="noreferrer"
-        className="fixed right-4 bottom-4 z-40 rounded-full bg-blood px-5 py-3 text-[11px] font-medium tracking-[0.16em] text-cream uppercase shadow-lg md:hidden"
+        className="fixed right-4 z-40 rounded-full bg-blood px-5 py-3 text-[11px] font-medium tracking-[0.16em] text-cream uppercase shadow-lg md:hidden bottom-[max(1rem,env(safe-area-inset-bottom))]"
       >
         Need blood?
       </a>

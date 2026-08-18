@@ -104,20 +104,26 @@ export default function Pillars() {
           return (
             <article
               key={pillar.index}
-              className={`pillar-card flex min-h-[88vh] w-full flex-col justify-between px-6 py-16 md:px-14 lg:h-screen lg:w-screen lg:px-20 ${tones[pillar.tone]}`}
+              className={`pillar-card flex min-h-[min(32rem,78dvh)] w-full flex-col justify-between px-5 py-14 sm:px-6 md:min-h-[80vh] md:px-14 lg:h-screen lg:w-screen lg:min-h-0 lg:px-20 ${tones[pillar.tone]}`}
             >
-              <div className="flex items-start justify-between">
-                <p className="text-[11px] tracking-[0.32em] uppercase opacity-70">{pillar.kicker}</p>
-                <span className="font-display text-6xl md:text-8xl">{pillar.index}</span>
+              <div className="flex items-start justify-between gap-4">
+                <p className="pt-2 text-[10px] tracking-[0.28em] uppercase opacity-70 sm:text-[11px] sm:tracking-[0.32em]">
+                  {pillar.kicker}
+                </p>
+                <span className="font-display text-5xl sm:text-6xl md:text-8xl">{pillar.index}</span>
               </div>
 
-              <div className="grid items-end gap-10 lg:grid-cols-[1.1fr_0.9fr]">
+              <div className="grid items-end gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:gap-10">
                 <div>
-                  <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-full border border-current/20">
+                  <div className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-full border border-current/20 md:mb-6">
                     <Icon size={20} />
                   </div>
-                  <h3 className="font-display text-5xl leading-none md:text-7xl lg:text-8xl">{pillar.title}</h3>
-                  <p className="mt-6 max-w-xl text-base leading-relaxed opacity-85 md:text-lg">{pillar.body}</p>
+                  <h3 className="font-display text-4xl leading-none sm:text-5xl md:text-7xl lg:text-8xl">
+                    {pillar.title}
+                  </h3>
+                  <p className="mt-5 max-w-xl text-[15px] leading-relaxed opacity-85 md:mt-6 md:text-lg">
+                    {pillar.body}
+                  </p>
                 </div>
                 <div className="flex justify-start lg:justify-end">
                   <Motif type={pillar.motif} tone={pillar.tone} />

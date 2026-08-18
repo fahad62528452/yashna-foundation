@@ -23,6 +23,7 @@ export default function Nav() {
   }, [open])
 
   const magnetic = (e) => {
+    if (!window.matchMedia('(pointer: fine)').matches) return
     const el = e.currentTarget
     const r = el.getBoundingClientRect()
     gsap.to(el, {
@@ -42,7 +43,7 @@ export default function Nav() {
         solid || open ? 'bg-cream/90 backdrop-blur-md' : 'bg-transparent'
       }`}
     >
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 md:px-8">
+      <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-3 sm:px-5 sm:py-4 md:px-8">
         <a href="#top" className="flex items-center gap-3" aria-label="Yashna Foundation home">
           <img src="/logo.png" alt="" className="h-11 w-11 rounded-full bg-paper object-contain" />
           <span className="hidden sm:block">
@@ -90,14 +91,14 @@ export default function Nav() {
       </div>
 
       {open && (
-        <div className="flex h-[calc(100dvh-72px)] flex-col justify-between bg-cream px-6 pb-10 lg:hidden">
-          <nav className="mt-8 flex flex-col gap-6" aria-label="Mobile">
+        <div className="flex h-[calc(100dvh-72px)] flex-col justify-between bg-cream px-6 pt-4 pb-[max(2.5rem,env(safe-area-inset-bottom))] lg:hidden">
+          <nav className="mt-6 flex flex-col gap-4 sm:mt-8 sm:gap-6" aria-label="Mobile">
             {NAV.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
                 onClick={() => setOpen(false)}
-                className="font-display text-5xl text-ink"
+                className="font-display text-4xl text-ink sm:text-5xl"
               >
                 {item.label}
               </a>
